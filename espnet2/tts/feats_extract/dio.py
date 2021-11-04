@@ -12,7 +12,7 @@ from typing import Union
 
 import humanfriendly
 import numpy as np
-import pyworld
+# import pyworld
 import torch
 import torch.nn.functional as F
 

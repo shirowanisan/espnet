@@ -20,9 +20,9 @@ import numpy as np
 import torch
 import torch.nn
 import torch.optim
-from torch.utils.tensorboard import SummaryWriter
+# from torch.utils.tensorboard import SummaryWriter
 from typeguard import check_argument_types
-import wandb
+# import wandb
 
 from espnet2.iterators.abs_iter_factory import AbsIterFactory
 from espnet2.main_funcs.average_nbest_models import average_nbest_models
@@ -450,7 +450,7 @@ class Trainer:
         schedulers: Sequence[Optional[AbsScheduler]],
         scaler: Optional[GradScaler],
         reporter: SubReporter,
-        summary_writer: Optional[SummaryWriter],
+        summary_writer,
         options: TrainerOptions,
         distributed_option: DistributedOption,
     ) -> bool:
@@ -719,7 +719,7 @@ class Trainer:
         cls,
         model: torch.nn.Module,
         output_dir: Optional[Path],
-        summary_writer: Optional[SummaryWriter],
+        summary_writer,
         iterator: Iterable[Tuple[List[str], Dict[str, torch.Tensor]]],
         reporter: SubReporter,
         options: TrainerOptions,

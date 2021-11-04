@@ -9,7 +9,7 @@ from typing import Iterator
 from typing import Tuple
 from typing import Union
 
-import kaldiio
+# import kaldiio
 import numpy as np
 import soundfile
 import torch

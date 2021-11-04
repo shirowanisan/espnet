@@ -16,7 +16,7 @@ from typing import Union
 
 import h5py
 import humanfriendly
-import kaldiio
+# import kaldiio
 import numpy as np
 import torch
 from torch.utils.data.dataset import Dataset
