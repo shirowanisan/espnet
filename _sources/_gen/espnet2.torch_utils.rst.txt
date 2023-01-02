@@ -4,23 +4,23 @@ espnet2.torch_utils package
 
 
 
-.. _espnet2.torch_utils.__init__:
+.. _espnet2.torch_utils.initialize:
 
-espnet2.torch_utils.__init__
-----------------------------
+espnet2.torch_utils.initialize
+------------------------------
 
-.. automodule:: espnet2.torch_utils.__init__
+.. automodule:: espnet2.torch_utils.initialize
     :members:
     :undoc-members:
     :show-inheritance:
 
 
-.. _espnet2.torch_utils.pytorch_version:
+.. _espnet2.torch_utils.set_all_random_seed:
 
-espnet2.torch_utils.pytorch_version
------------------------------------
+espnet2.torch_utils.set_all_random_seed
+---------------------------------------
 
-.. automodule:: espnet2.torch_utils.pytorch_version
+.. automodule:: espnet2.torch_utils.set_all_random_seed
     :members:
     :undoc-members:
     :show-inheritance:
@@ -37,12 +37,45 @@ espnet2.torch_utils.device_funcs
     :show-inheritance:
 
 
+.. _espnet2.torch_utils.get_layer_from_string:
+
+espnet2.torch_utils.get_layer_from_string
+-----------------------------------------
+
+.. automodule:: espnet2.torch_utils.get_layer_from_string
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 .. _espnet2.torch_utils.recursive_op:
 
 espnet2.torch_utils.recursive_op
 --------------------------------
 
 .. automodule:: espnet2.torch_utils.recursive_op
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+.. _espnet2.torch_utils.forward_adaptor:
+
+espnet2.torch_utils.forward_adaptor
+-----------------------------------
+
+.. automodule:: espnet2.torch_utils.forward_adaptor
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+.. _espnet2.torch_utils.pytorch_version:
+
+espnet2.torch_utils.pytorch_version
+-----------------------------------
+
+.. automodule:: espnet2.torch_utils.pytorch_version
     :members:
     :undoc-members:
     :show-inheritance:
@@ -70,34 +103,12 @@ espnet2.torch_utils.load_pretrained_model
     :show-inheritance:
 
 
-.. _espnet2.torch_utils.initialize:
+.. _espnet2.torch_utils.__init__:
 
-espnet2.torch_utils.initialize
-------------------------------
+espnet2.torch_utils.__init__
+----------------------------
 
-.. automodule:: espnet2.torch_utils.initialize
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-.. _espnet2.torch_utils.set_all_random_seed:
-
-espnet2.torch_utils.set_all_random_seed
----------------------------------------
-
-.. automodule:: espnet2.torch_utils.set_all_random_seed
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-
-.. _espnet2.torch_utils.forward_adaptor:
-
-espnet2.torch_utils.forward_adaptor
------------------------------------
-
-.. automodule:: espnet2.torch_utils.forward_adaptor
+.. automodule:: espnet2.torch_utils.__init__
     :members:
     :undoc-members:
     :show-inheritance:
