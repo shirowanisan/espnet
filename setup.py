@@ -153,7 +153,7 @@ setup(
     package_data={"espnet": ["version.txt"]},
     # #448: "scripts" is inconvenient for developping because they are copied
     # scripts=get_all_scripts('espnet/bin'),
-    install_requires=install_requires,
+    # install_requires=install_requires,
     setup_requires=setup_requires,
     tests_require=tests_require,
     extras_require=extras_require,
