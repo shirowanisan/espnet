@@ -114,7 +114,7 @@ def pyopenjtalk_g2p_prosody(text: str, drop_unvoiced_vowels: bool = True) -> Lis
     """
     import pyopenjtalk
 
-    labels = pyopenjtalk.run_frontend(text)[1]
+    labels = pyopenjtalk.extract_fullcontext(text)
     N = len(labels)
 
     phones = []
