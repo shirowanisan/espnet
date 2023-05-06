@@ -4,8 +4,8 @@ import warnings
 from pathlib import Path
 from typing import Iterable, List, Optional, Union
 
-import g2p_en
-import jamo
+# import g2p_en
+# import jamo
 from packaging.version import parse as V
 from typeguard import check_argument_types
 

@@ -4,7 +4,7 @@ from io import StringIO
 from pathlib import Path
 from typing import Callable, Collection, Dict, Iterator, Tuple, Union
 
-import kaldiio
+# import kaldiio
 import numpy as np
 import soundfile
 import torch

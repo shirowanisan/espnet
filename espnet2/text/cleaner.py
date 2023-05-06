@@ -1,6 +1,6 @@
 from typing import Collection
 
-import tacotron_cleaner.cleaners
+# import tacotron_cleaner.cleaners
 from jaconv import jaconv
 from typeguard import check_argument_types
 
