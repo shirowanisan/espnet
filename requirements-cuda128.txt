@@ -93,7 +93,6 @@ pyopenjtalk==0.1.3
 pyparsing==3.0.9
 pypinyin==0.44.0
 pysptk==0.2.0
-python-apt==2.4.0+ubuntu4.1
 python-dateutil==2.8.2
 pytorch-wpe==0.0.1
 pyworld==0.3.2
