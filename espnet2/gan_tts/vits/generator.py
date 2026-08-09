@@ -516,17 +516,37 @@ class VITSGenerator(torch.nn.Module):
         else:
             # duration
             if dur is None:
-                logw = self.duration_predictor(
-                    x,
-                    x_mask,
-                    g=g,
-                    inverse=True,
-                    noise_scale=noise_scale_dur,
-                )
+                orig_device = x.device
+                # NOTE: the stochastic duration predictor's spline flow is
+                # numerically sensitive; some backends (e.g. DirectML) diverge
+                # from CPU/CUDA precision here and produce wrong durations, so
+                # run it on CPU for those backends only.
+                if orig_device.type in ("cpu", "cuda"):
+                    logw = self.duration_predictor(
+                        x,
+                        x_mask,
+                        g=g,
+                        inverse=True,
+                        noise_scale=noise_scale_dur,
+                    )
+                else:
+                    self.duration_predictor.to("cpu")
+                    logw = self.duration_predictor(
+                        x.to("cpu"),
+                        x_mask.to("cpu"),
+                        g=g.to("cpu") if g is not None else None,
+                        inverse=True,
+                        noise_scale=noise_scale_dur,
+                    ).to(orig_device)
+                    self.duration_predictor.to(orig_device)
                 w = torch.exp(logw) * x_mask * alpha
                 dur = torch.ceil(w)
             y_lengths = torch.clamp_min(torch.sum(dur, [1, 2]), 1).long()
-            y_mask = make_non_pad_mask(y_lengths).unsqueeze(1).to(text.device)
+            y_mask = (
+                make_non_pad_mask(y_lengths)
+                .unsqueeze(1)
+                .to(device=text.device, dtype=x_mask.dtype)
+            )
             attn_mask = torch.unsqueeze(x_mask, 2) * torch.unsqueeze(y_mask, -1)
             attn = self._generate_path(dur, attn_mask)
 
